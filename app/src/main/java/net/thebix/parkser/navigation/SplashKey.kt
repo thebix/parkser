@@ -4,7 +4,7 @@ import net.thebix.parkser.R
 import paperparcel.PaperParcel
 
 @PaperParcel
-class SplashKey(val testParam: String = "") : BaseKey() {
+data class SplashKey(val testParam: String = "") : BaseKey() {
 
     companion object {
         @JvmField

@@ -37,5 +37,10 @@ abstract class NavigationActivity : AppCompatActivity(), StateChanger {
         completionCallback.stateChangeComplete()
     }
 
+    override fun onBackPressed() {
+        NavigationUtility.goBack(this)
+        // TODO: add more logic: back quits the app, back is handled on view
+    }
+
     abstract fun getDefaultViewKey(): BaseKey
 }

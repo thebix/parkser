@@ -10,6 +10,7 @@ import com.jakewharton.rxbinding2.view.RxView
 import com.zhuinden.simplestack.Backstack
 import io.reactivex.disposables.CompositeDisposable
 import net.thebix.parkser.R
+import net.thebix.parkser.cameras.list.CamerasListKey
 import net.thebix.parkser.kotlin.bindView
 
 class SplashView(
@@ -36,6 +37,7 @@ class SplashView(
         mCompositeDisposable = CompositeDisposable(
                 RxView.clicks(mTitle).subscribe({
                     mTitle.text = context.getString(R.string.navigation_splash_title)
+                    NavigationUtility.goTo(context, CamerasListKey(""))
                 }))
     }
 

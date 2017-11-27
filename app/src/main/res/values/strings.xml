@@ -2,4 +2,5 @@
     <string name="app_name">Parsker app</string>
 
     <string name="navigation_splash_title">Splash screen</string>
+    <string name="cameras_list_title">Cameras list screen</string>
 </resources>
