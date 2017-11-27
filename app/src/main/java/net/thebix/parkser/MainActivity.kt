@@ -1,12 +1,15 @@
 package net.thebix.parkser
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import net.thebix.parkser.navigation.BaseKey
+import net.thebix.parkser.navigation.NavigationActivity
+import net.thebix.parkser.navigation.SplashKey
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : NavigationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
     }
+
+    override fun getDefaultViewKey(): BaseKey = SplashKey()
 }
