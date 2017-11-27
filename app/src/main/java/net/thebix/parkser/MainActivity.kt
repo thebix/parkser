@@ -11,5 +11,5 @@ class MainActivity : NavigationActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun getDefaultViewKey(): BaseKey = SplashKey()
+    override fun getDefaultViewKey(): BaseKey = SplashKey("Press me")
 }

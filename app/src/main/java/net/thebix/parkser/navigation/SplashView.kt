@@ -5,14 +5,22 @@ import android.support.annotation.NonNull
 import android.support.annotation.Nullable
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import android.widget.TextView
+import com.jakewharton.rxbinding2.view.RxView
 import com.zhuinden.simplestack.Backstack
+import io.reactivex.disposables.CompositeDisposable
+import net.thebix.parkser.R
+import net.thebix.parkser.kotlin.bindView
 
 class SplashView(
         @NonNull context: Context,
-        @Nullable attrs: AttributeSet? = null)
+        @Nullable attrs: AttributeSet?)
     : LinearLayout(context, attrs) {
 
-    var mSplashScreenKey: SplashKey? = null
+    val mTitle: TextView by bindView(R.id.navigation_splash_title)
+
+    private lateinit var mSplashScreenKey: SplashKey
+    private lateinit var mCompositeDisposable: CompositeDisposable
 
     init {
         // TODO: preconditions of context
@@ -23,7 +31,12 @@ class SplashView(
 
     override fun onFinishInflate() {
         super.onFinishInflate()
-        // INFO: ButterKnife.bind(this);
+//        ButterKnife.bind(this)
+        mTitle.text = mSplashScreenKey.testParam
+        mCompositeDisposable = CompositeDisposable(
+                RxView.clicks(mTitle).subscribe({
+                    mTitle.text = context.getString(R.string.navigation_splash_title)
+                }))
     }
 
     override fun onAttachedToWindow() {
@@ -31,6 +44,10 @@ class SplashView(
     }
 
     override fun onDetachedFromWindow() {
+        if (!isInEditMode) {
+            mCompositeDisposable.dispose()
+
+        }
         super.onDetachedFromWindow()
     }
 }
