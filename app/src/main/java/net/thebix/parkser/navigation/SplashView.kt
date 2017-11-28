@@ -9,14 +9,20 @@ import android.widget.TextView
 import com.jakewharton.rxbinding2.view.RxView
 import com.zhuinden.simplestack.Backstack
 import io.reactivex.disposables.CompositeDisposable
+import net.thebix.parkser.ParkserApplication
 import net.thebix.parkser.R
 import net.thebix.parkser.cameras.list.CamerasListKey
 import net.thebix.parkser.kotlin.bindView
+import javax.inject.Inject
+import javax.inject.Named
 
 class SplashView(
         @NonNull context: Context,
         @Nullable attrs: AttributeSet?)
     : LinearLayout(context, attrs) {
+
+    @field:[Inject Named("something")]
+    lateinit var something: String
 
     val mTitle: TextView by bindView(R.id.navigation_splash_title)
 
@@ -32,6 +38,11 @@ class SplashView(
 
     override fun onFinishInflate() {
         super.onFinishInflate()
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        ParkserApplication.mDaggerGraph.inject(this)
 //        ButterKnife.bind(this)
         mTitle.text = mSplashScreenKey.testParam
         mCompositeDisposable = CompositeDisposable(
@@ -39,10 +50,6 @@ class SplashView(
                     mTitle.text = context.getString(R.string.navigation_splash_title)
                     NavigationUtility.goTo(context, CamerasListKey(""))
                 }))
-    }
-
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
     }
 
     override fun onDetachedFromWindow() {
