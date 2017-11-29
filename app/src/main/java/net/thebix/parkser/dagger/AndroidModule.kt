@@ -23,11 +23,6 @@ class AndroidModule(private val application: Application) {
 //    @ForApplication
 //    fun provideApplicationContext(): Context = application
 
-//    @Provides
-//    @Singleton
-//    fun provideLocationManager(): LocationManager =
-//            application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-
     @Provides
     @Singleton
     @Named("something")

@@ -11,8 +11,6 @@ import com.zhuinden.simplestack.navigator.Navigator
 
 abstract class NavigationActivity : AppCompatActivity(), StateChanger {
 
-    private val TAG = NavigationActivity::class.java.canonicalName
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

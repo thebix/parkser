@@ -14,15 +14,9 @@ class ParkserApplication : Application() {
         @JvmStatic lateinit var mDaggerGraph: ApplicationComponent
     }
 
-//    @Inject
-//    lateinit var locationManager: LocationManager
-
     override fun onCreate() {
         super.onCreate()
         mDaggerGraph = DaggerApplicationComponent.builder().androidModule(AndroidModule(this)).build()
         mDaggerGraph.inject(this)
-
-//        println("App: $locationManager")
-        //TODO do some other cool stuff here
     }
 }
