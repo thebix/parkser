@@ -3,7 +3,7 @@ package net.thebix.parkser
 import android.os.Bundle
 import net.thebix.parkser.navigation.BaseKey
 import net.thebix.parkser.navigation.NavigationActivity
-import net.thebix.parkser.navigation.SplashKey
+import net.thebix.parkser.navigation.splash.SplashKey
 
 class MainActivity : NavigationActivity() {
 
@@ -11,5 +11,5 @@ class MainActivity : NavigationActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun getDefaultViewKey(): BaseKey = SplashKey("Press me")
+    override fun getDefaultViewKey(): BaseKey = SplashKey(SplashKey.RedirectTypes.CAMERAS_LIST_SCREEN)
 }

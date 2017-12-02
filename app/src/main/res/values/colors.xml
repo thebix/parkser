@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <color name="parkser_primary">#155e9c</color>
+    <color name="parkser_primary_light">#558bcd</color>
+    <color name="parkser_primary_dark">#00356d</color>
+
+    <color name="parkser_accent">#FF4081</color>
 </resources>

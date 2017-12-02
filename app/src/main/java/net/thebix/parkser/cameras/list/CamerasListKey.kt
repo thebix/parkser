@@ -5,7 +5,7 @@ import net.thebix.parkser.navigation.BaseKey
 import paperparcel.PaperParcel
 
 @PaperParcel
-data class CamerasListKey(val any: String?) : BaseKey() {
+class CamerasListKey : BaseKey() {
 
     companion object {
         @JvmField
