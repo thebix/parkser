@@ -10,8 +10,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers.mainThread
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import net.thebix.parkser.cameras.list.CamerasListKey
+import net.thebix.parkser.kotlin.rxUi
 import net.thebix.parkser.navigation.NavigationUtility
-import net.thebix.parkser.rx.rxUi
 import java.util.concurrent.TimeUnit
 
 class SplashViewImpl(

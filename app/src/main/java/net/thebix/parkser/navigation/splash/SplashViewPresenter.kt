@@ -2,7 +2,7 @@ package net.thebix.parkser.navigation.splash
 
 import android.support.annotation.NonNull
 import io.reactivex.disposables.CompositeDisposable
-import net.thebix.parkser.rx.rxBind
+import net.thebix.parkser.kotlin.rxBind
 
 class SplashViewPresenter {
 
@@ -13,5 +13,4 @@ class SplashViewPresenter {
         rxBind(splashView.getRedirect(), splashView.proceedRedirect())
         return compositeDisposable
     }
-
 }

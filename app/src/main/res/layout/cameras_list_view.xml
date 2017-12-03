@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<net.thebix.parkser.cameras.list.CamerasListView xmlns:android="http://schemas.android.com/apk/res/android"
+<net.thebix.parkser.cameras.list.CamerasListViewImpl xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/cameras_list_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cameras List" />
-</net.thebix.parkser.cameras.list.CamerasListView>
+
+    <ImageView
+        android:id="@+id/cameras_list_cameras_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@mipmap/ic_logo" />
+
+</net.thebix.parkser.cameras.list.CamerasListViewImpl>
