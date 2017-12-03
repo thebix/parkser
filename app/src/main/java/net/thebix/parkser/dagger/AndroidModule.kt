@@ -6,6 +6,7 @@ import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import net.thebix.parkser.preferences.PreferencesManager
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -15,22 +16,20 @@ import javax.inject.Singleton
 @Module
 class AndroidModule(private val application: Application) {
 
+    companion object {
+        const val NAMED_CONTEXT: String = "context"
+    }
+
     /**
      * Allow the application context to be injected but require that it be annotated with [ ][ForApplication] to explicitly differentiate it from an activity context.
      */
-//    @Provides
-//    @Singleton
+    @Provides
+    @Singleton
 //    @ForApplication
-//    fun provideApplicationContext(): Context = application
+    @Named(AndroidModule.NAMED_CONTEXT)
+    fun provideApplicationContext(): Context = application
 
     @Provides
     @Singleton
-    @Named("something")
-    fun provideSomething(): String = "something"
-
-    @Provides
-    @Singleton
-    @Named("somethingElse")
-    fun provideSomethingElse(): String = "somethingElse"
-
+    fun providePreferencesManager(@Named(AndroidModule.NAMED_CONTEXT) context: Context) = PreferencesManager(context)
 }

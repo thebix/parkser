@@ -7,6 +7,8 @@ import android.util.AttributeSet
 import android.widget.LinearLayout
 import io.reactivex.disposables.CompositeDisposable
 import net.thebix.parkser.ParkserApplication
+import net.thebix.parkser.preferences.PreferencesManager
+import javax.inject.Inject
 
 class CamerasListView(
         @NonNull context: Context,
@@ -15,6 +17,9 @@ class CamerasListView(
 
     //    val mTitle: TextView by bindView(R.id.navigation_splash_title)
     private lateinit var mCompositeDisposable: CompositeDisposable
+
+    @field:[Inject]
+    lateinit var mPreferencesManager: PreferencesManager
 
     init {
         checkNotNull(context, { "context" })
