@@ -24,11 +24,11 @@ class PreferencesManager(@NonNull context: Context) {
     fun remove(key: String) {
         mSharedPreferences.edit().remove(key).apply()
         var i = 0
-        var itemKey = getArrayKey("key", i)
+        var itemKey = getArrayKey(key, i)
         while (contains(itemKey)) {
             remove(itemKey)
             i += 1
-            itemKey = getArrayKey("key", i)
+            itemKey = getArrayKey(key, i)
         }
     }
 
@@ -59,11 +59,11 @@ class PreferencesManager(@NonNull context: Context) {
         checkNotNull(key, { "key" })
         val result: ArrayList<T> = ArrayList()
         var i = 0
-        var itemKey = getArrayKey("key", i)
+        var itemKey = getArrayKey(key, i)
         while (contains(itemKey)) {
             result.add(get(itemKey, defaultListItem))
             i += 1
-            itemKey = getArrayKey("key", i)
+            itemKey = getArrayKey(key, i)
 
         }
         return result
@@ -74,7 +74,7 @@ class PreferencesManager(@NonNull context: Context) {
         checkNotNull(values, { "values" })
         remove(key)
         for (i in values.indices) {
-            set(getArrayKey("key", i), values[i])
+            set(getArrayKey(key, i), values[i])
         }
     }
 
