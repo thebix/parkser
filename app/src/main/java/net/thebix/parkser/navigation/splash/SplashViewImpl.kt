@@ -48,7 +48,7 @@ class SplashViewImpl(
 
     override fun getRedirect(): Observable<SplashKey.RedirectTypes> {
         return Observable.just(mSplashKey.redirectType)
-                //TODO: remove it, just to show splash screen a bit longer
+                //TODO: remove it, just to show the splash screen a bit longer
                 .delay(2, TimeUnit.SECONDS)
     }
 

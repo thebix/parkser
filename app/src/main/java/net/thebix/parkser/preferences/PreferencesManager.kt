@@ -15,11 +15,8 @@ class PreferencesManager(@NonNull context: Context) {
         mSharedPreferences = context.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE)
     }
 
-    fun contains(key: String): Boolean {
-        if (mSharedPreferences.contains(key))
-            return true
-        return mSharedPreferences.contains("${key}_${PREFERENCES_ARRAY_PREFIX}_${0}")
-    }
+    fun contains(key: String): Boolean =
+            mSharedPreferences.contains(key) || mSharedPreferences.contains("${key}_${PREFERENCES_ARRAY_PREFIX}_${0}")
 
     fun remove(key: String) {
         mSharedPreferences.edit().remove(key).apply()
