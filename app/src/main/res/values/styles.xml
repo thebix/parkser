@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/parkser_accent</item>
     </style>
 
+    <style name="Parkser" />
+
+    <style name="Parkser.Text">
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:textColor">@color/parkser_grey_dark</item>
+    </style>
+
+    <style name="Parkser.Text.White">
+        <item name="android:textColor">@color/parkser_white</item>
+    </style>
+
+    <style name="Parkser.Text.16sp">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@color/parkser_grey_dark</item>
+    </style>
+
+    <style name="Parkser.Text.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Parkser.Text.Bold.16sp">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+
+
 </resources>

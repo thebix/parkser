@@ -6,4 +6,7 @@
     <color name="parkser_primary_dark">#00356d</color>
 
     <color name="parkser_accent">#FF4081</color>
+
+    <color name="parkser_grey_dark">#232323</color>
+    <color name="parkser_white">#FFFFFF</color>
 </resources>
